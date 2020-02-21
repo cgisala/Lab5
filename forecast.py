@@ -6,13 +6,11 @@ from pprint import pprint
 
 
 # Variables
-# key = os.environ.get('WEATHER_KEY')
-key = '931ff5eff05bb2caa4f58e70a64f78bb'
+key = os.environ.get('WEATHER_KEY')
 
-city = input('\nWhat US city do you want to see the weather: ')
+city = input('\nWhat US city do you want to see the weather: ') #prompt user to input US city
 location = f'{city},us'
 query = {'q': location, 'units': 'imperial', 'appid': key}
-# query = {'q': 'minneapolis,us', 'units': 'imperial', 'appid': key}
 
 url = 'https://api.openweathermap.org/data/2.5/forecast'
 data = requests.get(url, params=query).json()
